@@ -17,7 +17,7 @@ const Form = () => {
         fileErrors,
         handleFileUpload,
         handleInputChange,
-        handleAddFileUpload,
+        addMoreFileUpload,
         handleRemoveFileUpload,
         submit,
     } = useFormLogic();
@@ -70,7 +70,7 @@ const Form = () => {
                     upload={upload}
                     index={index}
                     handleFileUpload={handleFileUpload}
-                    handleAddFileUpload={handleAddFileUpload}
+                    addMoreFileUpload={addMoreFileUpload}
                     handleRemoveFileUpload={handleRemoveFileUpload}
                     fileErrors={fileErrors}
                     required />

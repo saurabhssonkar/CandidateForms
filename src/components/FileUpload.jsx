@@ -1,6 +1,6 @@
 import React from "react";
 
-const FileUpload = ({ upload, index,  handleFileUpload, handleAddFileUpload, handleRemoveFileUpload, fileErrors ,label }) => {
+const FileUpload = ({ upload, index,  handleFileUpload, addMoreFileUpload, handleRemoveFileUpload, fileErrors ,label }) => {
   return (
     <><div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="flex flex-col">
@@ -49,7 +49,7 @@ const FileUpload = ({ upload, index,  handleFileUpload, handleAddFileUpload, han
 
             {index === 0 ? (
               <button
-                onClick={handleAddFileUpload}
+                onClick={addMoreFileUpload}
                 className="ml-5 bg-gray-800 text-white py-2 px-3 text-2xl font-bold rounded-md"
               >
                 +

@@ -117,7 +117,7 @@ const useFormLogic = () => {
         }
     };
 
-    const handleAddFileUpload = () => {
+    const addMoreFileUpload = () => {
         let newfield = { fileName: '', fileType: '', uploadfile: '' };
         setFileUploads([...fileUploads, newfield]);
     };
@@ -159,7 +159,6 @@ const useFormLogic = () => {
                     <div className=''>
                         <p>Form submitted successfully</p>
                         <hr />
-                        {/* <button className='mt-1 bg-red-500 rounded-md text-white text-xs px-2 py-1' onClick={() => toast.dismiss()}>Close</button> */}
                     </div>,
 
                 );
@@ -187,7 +186,7 @@ const useFormLogic = () => {
         fileErrors,
         handleFileUpload,
         handleInputChange,
-        handleAddFileUpload,
+        addMoreFileUpload,
         handleRemoveFileUpload,
         submit,
     };

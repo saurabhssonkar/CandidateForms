@@ -14,13 +14,11 @@ const useFormLogic = () => {
     });
     const [errors, setErrors] = useState({});
     const [fileErrors, setFileErrors] = useState([]);
-    
+
 
     const handleFileUpload = (event, index) => {
         let data = [...fileUploads];
         const { name, value, files } = event.target;
-        // console.log("const file = files[0];", files[0].name)
-
         if (name === "uploadfile") {
             const file = files[0];
             const isPdf = file.type === "application/pdf";
@@ -35,7 +33,7 @@ const useFormLogic = () => {
                 };
                 setFileErrors((prevErrors) => {
                     const newErrors = [...prevErrors];
-                    newErrors[index] = ""; 
+                    newErrors[index] = "";
                     return newErrors;
                 });
             } else if (data[index].fileType === "image" && isImage) {
@@ -46,10 +44,18 @@ const useFormLogic = () => {
                 };
                 setFileErrors((prevErrors) => {
                     const newErrors = [...prevErrors];
-                    newErrors[index] = ""; 
+                    newErrors[index] = "";
                     return newErrors;
                 });
-            } else {
+            }
+            else if(data[index].fileType==""){
+                setFileErrors((prevErrors) => {
+                    const newErrors = [...prevErrors];
+                    newErrors[index] = "Please select file type"; 
+                    return newErrors;
+                });
+            }
+            else {
                 setFileErrors((prevErrors) => {
                     const newErrors = [...prevErrors];
                     newErrors[index] = "Upload a valid file type"; // Set the error for the current index
@@ -129,13 +135,13 @@ const useFormLogic = () => {
             fileUploads,
         };
         if (Object.values(errors).some(error => error !== null)) {
-            
+
             toast.error('Please fix the min age should be 18 Years before submitting the form.');
 
             return;
         }
         if (fileErrors.some(error => error !== "")) {
-            
+
             toast.error('Please fix the file upload errors before submitting the form.');
             return;
         }
@@ -147,26 +153,26 @@ const useFormLogic = () => {
                 body: JSON.stringify(combinedData),
                 headers: myHeaders,
             });
-            if (response.ok){
-                console.log("respons",response)
-                toast.success( 
+            if (response.ok) {
+                console.log("respons", response)
+                toast.success(
                     <div className=''>
                         <p>Form submitted successfully</p>
                         <hr />
                         {/* <button className='mt-1 bg-red-500 rounded-md text-white text-xs px-2 py-1' onClick={() => toast.dismiss()}>Close</button> */}
                     </div>,
-                  
+
                 );
-                
+
 
             }
-           
+
 
         }
         catch (error) {
             toast.error('Internal server error');
 
-            console.error('API ERROR',error);
+            console.error('API ERROR', error);
 
         }
 

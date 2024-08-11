@@ -1,6 +1,6 @@
 import React from "react";
 
-const PersonalInformation = ({ candidateInformation, handleChange, errors,required }) => {
+const PersonalInformation = ({ candidateInformation, handleInputChange, errors,required }) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div className="flex flex-col">
@@ -10,7 +10,7 @@ const PersonalInformation = ({ candidateInformation, handleChange, errors,requir
         <input
           name="firstName"
           value={candidateInformation.firstName}
-          onChange={handleChange}
+          onChange={handleInputChange}
           type="text"
           placeholder="Enter your first name here.."
           className="mt-2 p-2 border border-gray-400 rounded-md "
@@ -24,7 +24,7 @@ const PersonalInformation = ({ candidateInformation, handleChange, errors,requir
         <input
           name="lastName"
           value={candidateInformation.lastName}
-          onChange={handleChange}
+          onChange={handleInputChange}
           type="text"
           placeholder="Enter your last name here.."
           className="mt-2 p-2 border border-gray-400 rounded-md"
@@ -38,7 +38,7 @@ const PersonalInformation = ({ candidateInformation, handleChange, errors,requir
         <input
           name="email"
           value={candidateInformation.email}
-          onChange={handleChange}
+          onChange={handleInputChange}
           type="email"
           placeholder="ex: myname@example.com"
           className="mt-2 p-2 border border-gray-400 rounded-md"
@@ -52,7 +52,7 @@ const PersonalInformation = ({ candidateInformation, handleChange, errors,requir
         <input
           name="dateOfbirth"
           value={candidateInformation.dateOfbirth}
-          onChange={handleChange}
+          onChange={handleInputChange}
           type="date"
           className="mt-2 p-2 border border-gray-400 rounded-md"
           required

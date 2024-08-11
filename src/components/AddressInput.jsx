@@ -1,6 +1,6 @@
 import React from "react";
 
-const AddressInput = ({ label, name1, name2, value1, value2, handleChange, required }) => {
+const AddressInput = ({ label, name1, name2, value1, value2, handleInputChange, required }) => {
   return (
     <>
       <div className="">
@@ -16,7 +16,7 @@ const AddressInput = ({ label, name1, name2, value1, value2, handleChange, requi
             type="text"
             name={name1}
             value={value1}
-            onChange={handleChange}
+            onChange={handleInputChange}
             className="mt-2 p-2 border border-gray-400 rounded-md"
             required={required}
           />
@@ -29,7 +29,7 @@ const AddressInput = ({ label, name1, name2, value1, value2, handleChange, requi
             type="text"
             name={name2}
             value={value2}
-            onChange={handleChange}
+            onChange={handleInputChange}
             className="mt-2 p-2 border border-gray-400 rounded-md"
             required={required}
           />

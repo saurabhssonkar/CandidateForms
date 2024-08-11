@@ -16,7 +16,7 @@ const Form = () => {
         errors,
         fileErrors,
         handleFileUpload,
-        handleChange,
+        handleInputChange,
         handleAddFileUpload,
         handleRemoveFileUpload,
         submit,
@@ -28,7 +28,7 @@ const Form = () => {
         <><form onSubmit={submit} className="max-w-3xl mx-auto p-6 py-10 rounded-lg space-y-6">
             <PersonalInformation
                 candidateInformation={candidateInformation}
-                handleChange={handleChange}
+                handleInputChange={handleInputChange}
                 errors={errors}
                 required />
 
@@ -38,7 +38,7 @@ const Form = () => {
                 name2="street2"
                 value1={candidateInformation.street1}
                 value2={candidateInformation.street2}
-                handleChange={handleChange}
+                handleInputChange={handleInputChange}
                 required={true} />
 
             <div className="flex items-center space-x-3">
@@ -46,7 +46,7 @@ const Form = () => {
                     type="checkbox"
                     name="SameasResidential"
                     checked={addressSame}
-                    onChange={handleChange}
+                    onChange={handleInputChange}
                     className="h-4 w-4 text-black border-gray-400 rounded" />
                 <label className="font-semibold text-lg text-gray-700">Same as Residential Address</label>
             </div>
@@ -57,7 +57,7 @@ const Form = () => {
                 name2="street4"
                 value1={candidateInformation.street3}
                 value2={candidateInformation.street4}
-                handleChange={handleChange}
+                handleInputChange={handleInputChange}
                 required={!addressSame} />
                 <div className="mt-4">
       <label className="font-semibold text-lg text-gray-700">Upload Documents</label>

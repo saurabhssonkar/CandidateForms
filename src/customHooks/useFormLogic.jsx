@@ -70,7 +70,7 @@ const useFormLogic = () => {
         setFileUploads(data);
     };
 
-    const handleChange = (e) => {
+    const handleInputChange = (e) => {
         const { name, value, type, checked } = e.target;
 
         if (type === "checkbox") {
@@ -186,7 +186,7 @@ const useFormLogic = () => {
         errors,
         fileErrors,
         handleFileUpload,
-        handleChange,
+        handleInputChange,
         handleAddFileUpload,
         handleRemoveFileUpload,
         submit,

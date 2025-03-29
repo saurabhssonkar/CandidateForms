@@ -9,7 +9,7 @@ const formDataSchema = new mongoose.Schema({
     street2: String,
     street3: String,
     street4: String,
-    sameAsResidential: Boolean,
+    sameAsResidential: { type: Boolean, default: false },
     fileUploads: [{ type: mongoose.Schema.Types.ObjectId, ref: 'FileUpload' }]
 });
 

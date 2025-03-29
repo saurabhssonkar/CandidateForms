@@ -44,7 +44,7 @@ const Form = () => {
             <div className="flex items-center space-x-3">
                 <input
                     type="checkbox"
-                    name="SameasResidential"
+                    name="sameAsResidential"
                     checked={addressSame}
                     onChange={handleInputChange}
                     className="h-4 w-4 text-black border-gray-400 rounded" />

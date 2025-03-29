@@ -10,7 +10,7 @@ const useFormLogic = () => {
         { fileName: '', fileType: '', uploadfile: '' }
     ]);
     const [candidateInformation, setCandidateInformation] = useState({
-        firstName: '', lastName: '', email: '', dateOfbirth: '', street1: '', street2: '', street3: '', street4: '', SameasResidential: ''
+        firstName: '', lastName: '', email: '', dateOfbirth: '', street1: '', street2: '', street3: '', street4: '', sameAsResidential: ''
     });
     const [errors, setErrors] = useState({});
     const [fileErrors, setFileErrors] = useState([]);
@@ -80,14 +80,14 @@ const useFormLogic = () => {
                     ...prevState,
                     street3: "",
                     street4: "",
-                    SameasResidential: checked,
+                    sameAsResidential: checked,
                 }));
             }
         } else {
             setCandidateInformation((prevState) => ({
                 ...prevState,
                 [name]: value,
-                SameasResidential: checked,
+                sameAsResidential: checked,
             }));
         }
 
